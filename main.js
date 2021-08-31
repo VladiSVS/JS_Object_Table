@@ -62,6 +62,41 @@ const singers = [
     { name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock" },
 ];
 
+let start = document.getElementById("table").innerHTML
+let searchText = document.getElementById("searchText")
+
+function addElement() {
+    document.getElementById("table").innerHTML = start
+    singers.forEach(elt => {
+        let addElement = document.createElement("tr")
+        addElement.innerHTML = `
+                <td>${elt.name}</td>
+                <td>${elt.country}</td>
+                <td>${elt.period_active.start} - ${elt.period_active.end}</td>
+                <td>${elt.genre}</td>`
+        document.getElementById("table").appendChild(addElement)
+    })
+}
+
+function searchElement() {
+    document.getElementById("table").innerHTML = start
+    singers.filter(elt => {
+        if (elt.name == searchText.value) {
+            let addElement = document.createElement("tr")
+            addElement.innerHTML = `
+                <td>${elt.name}</td>
+                <td>${elt.country}</td>
+                <td>${elt.period_active.start} - ${elt.period_active.end}</td>
+                <td>${elt.genre}</td>`
+            document.getElementById("table").appendChild(addElement)
+        } else if (searchText.value.length == 0) {
+            addElement()
+        }
+    })
+}
+
+addElement()
+
 function singSortName() {
 
     singers.sort(function (a, b) {
@@ -110,44 +145,6 @@ function singSortGenre() {
     })
     addElement()
 }
-
-let start = document.getElementById("table").innerHTML
-
-function addElement() {
-    document.getElementById("table").innerHTML = start
-    singers.forEach(elt => {
-        let addElement = document.createElement("tr")
-        addElement.innerHTML = `
-                <td>${elt.name}</td>
-                <td>${elt.country}</td>
-                <td>${elt.period_active.start} - ${elt.period_active.end}</td>
-                <td>${elt.genre}</td>`
-        document.getElementById("table").appendChild(addElement)
-    })
-}
-
-addElement()
-
-function searchElement() {
-
-    document.getElementById("table").innerHTML = start
-
-    singers.filter(elt => {
-        if (elt.name == document.getElementById("searchText").value) {
-            let addElement = document.createElement("tr")
-            addElement.innerHTML = `
-                <td>${elt.name}</td>
-                <td>${elt.country}</td>
-                <td>${elt.period_active.start} - ${elt.period_active.end}</td>
-                <td>${elt.genre}</td>`
-            document.getElementById("table").appendChild(addElement)
-        } else {
-            return
-        }
-    })
-
-}
-
 
 
 
