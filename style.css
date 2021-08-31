@@ -1,0 +1,22 @@
+table {
+    border: 1px solid #000;
+    border-spacing: 0;
+    border-left: 0;
+    margin-top: 0.5em;
+} 
+
+th {
+    border: 1px solid #000;
+    padding: 0.5em;
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+    cursor: pointer;
+}
+
+td {
+    border: 1px solid #000;
+    padding: 0.5em;
+    border-bottom: 0;
+    border-right: 0;
+}

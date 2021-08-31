@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Singers</h1>
+    <input type="text" id="searchText" placeholder="Search by Name">
+    <button onclick="searchElement()">Search</button>
+    <table id="table" style="width:100%">
+        <tr>
+            <th onclick="singSortName()">Name</th>
+            <th onclick="singSortCountry()">Country</th>
+            <th onclick="singSortPeriod()">Period Active</th>
+            <th onclick="singSortGenre()">Genre</th>
+        </tr>
+    </table>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
